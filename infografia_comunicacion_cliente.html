@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Comunicación Oral en la Atención al Cliente</title>
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #f4f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #0077b6;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 2em;
+    }
+    .container {
+        width: 90%;
+        margin: auto;
+        padding: 20px;
+    }
+    section {
+        background: white;
+        margin: 15px 0;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #0077b6;
+    }
+    button {
+        background-color: #00b4d8;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+    button:hover {
+        background-color: #0096c7;
+    }
+    .hidden {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #e0f7fa;
+        border-radius: 5px;
+    }
+    .quiz-option {
+        display: block;
+        margin: 8px 0;
+        padding: 8px;
+        background-color: #caf0f8;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .feedback {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<header>Comunicación Oral en la Atención al Cliente</header>
+<div class='container'>
+    <section>
+        <h2>¿Qué es la comunicación oral?</h2>
+        <p>Es el proceso de transmitir información mediante palabras habladas, esencial para ofrecer una atención al cliente eficaz.</p>
+    </section>
+    <section>
+        <h2>Elementos clave</h2>
+        <ul>
+            <li>Tono de voz</li>
+            <li>Claridad</li>
+            <li>Escucha activa</li>
+            <li>Empatía</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Errores comunes</h2>
+        <button onclick="toggleVisibility('errores')">Ver ejemplos</button>
+        <div id='errores' class='hidden'>
+            <p>❌ Interrumpir al cliente<br>❌ Usar tecnicismos<br>❌ Falta de cortesía</p>
+        </div>
+    </section>
+    <section>
+        <h2>Buenas prácticas</h2>
+        <button onclick="toggleVisibility('buenas')">Ver ejemplos</button>
+        <div id='buenas' class='hidden'>
+            <p>✅ Saludar cordialmente<br>✅ Confirmar comprensión<br>✅ Usar lenguaje positivo</p>
+        </div>
+    </section>
+    <section>
+        <h2>Mini Test</h2>
+        <p>¿Qué harías si un cliente está molesto?</p>
+        <div class='quiz-option' onclick="showFeedback('correcto')">Escuchar con empatía y ofrecer soluciones</div>
+        <div class='quiz-option' onclick="showFeedback('incorrecto')">Ignorar su tono y seguir con el proceso</div>
+        <div id='feedback' class='feedback'></div>
+    </section>
+</div>
+<script>
+    function toggleVisibility(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === 'block') {
+            element.style.display = 'none';
+        } else {
+            element.style.display = 'block';
+        }
+    }
+    function showFeedback(type) {
+        var feedback = document.getElementById('feedback');
+        if (type === 'correcto') {
+            feedback.textContent = '¡Correcto! La empatía es clave en la atención al cliente.';
+            feedback.style.color = 'green';
+        } else {
+            feedback.textContent = 'Incorrecto. Ignorar al cliente empeora la situación.';
+            feedback.style.color = 'red';
+        }
+    }
+</script>
+</body>
+</html>
